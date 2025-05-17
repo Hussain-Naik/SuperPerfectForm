@@ -3,7 +3,7 @@ from .models import Order, OrderItems
 
 class OrderSerializer(serializers.ModelSerializer):
     '''
-    serializer for making tasks as completed
+    serializer for orders
     '''
 
     class Meta:

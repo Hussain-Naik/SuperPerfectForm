@@ -5,8 +5,8 @@ from menu.models import Menu
 class Order(models.Model):
     reference = models.CharField(max_length=12)
     customer = models.CharField(max_length=20)
-    paid = models.BooleanField()
-    completed = models.BooleanField()
+    paid = models.BooleanField(default=False)
+    completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
     item = models.ManyToManyField(
         Menu, through='OrderItems', related_name='items'
