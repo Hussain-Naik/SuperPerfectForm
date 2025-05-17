@@ -7,6 +7,7 @@ class Order(models.Model):
     customer = models.CharField(max_length=20)
     paid = models.BooleanField()
     completed = models.BooleanField()
+    created_at = models.DateTimeField(auto_now_add=True)
     item = models.ManyToManyField(
         Menu, through='OrderItems', related_name='items'
         )
