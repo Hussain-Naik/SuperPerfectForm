@@ -8,14 +8,14 @@ class Order(models.Model):
     paid = models.BooleanField(default=False)
     completed = models.BooleanField(default=False)
     created_at = models.DateTimeField(auto_now_add=True)
-    item = models.ManyToManyField(
-        Menu, through='OrderItems', related_name='items'
+    items = models.ManyToManyField(
+        Menu, through='OrderItem', related_name='items'
         )
     
     def __str__(self):
         return self.reference
 
-class OrderItems(models.Model):
+class OrderItem(models.Model):
     order = models.ForeignKey(Order, on_delete=models.CASCADE, related_name='order')
     item = models.ForeignKey(Menu, on_delete=models.CASCADE, related_name='menu_item')
     quantity = models.IntegerField()
