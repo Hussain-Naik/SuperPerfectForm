@@ -8,4 +8,4 @@ class OrderCreateView(generics.CreateAPIView):
 
 class OrderListView(generics.ListCreateAPIView):
     queryset = Order.objects.all()
-    serializer_class = OrderListSerializer
+    serializer_class = OrderSerializer
