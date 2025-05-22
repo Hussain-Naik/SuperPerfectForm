@@ -1,6 +1,6 @@
 from rest_framework import generics
 from .models import Order
-from .serializers import OrderSerializer
+from .serializers import OrderSerializer, OrderListSerializer
 
 class OrderCreateView(generics.CreateAPIView):
     queryset = Order.objects.all()
@@ -8,4 +8,4 @@ class OrderCreateView(generics.CreateAPIView):
 
 class OrderListView(generics.ListCreateAPIView):
     queryset = Order.objects.all()
-    serializer_class = OrderSerializer
+    serializer_class = OrderListSerializer
